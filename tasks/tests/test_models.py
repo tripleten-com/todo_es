@@ -16,9 +16,10 @@ class TaskModelTest(TestCase):
         # более 100 символов (буква "ж" транслитерируется в два символа: "zh")
         #
         cls.task = Task.objects.create(
-            title='Ж'*100,
+            title='I am a str'*10,
             text='Тестовый текст'
         )
+        # print(len(cls.task.title))
 
     def test_verbose_name(self):
         """verbose_name в полях совпадает с ожидаемым."""
@@ -53,7 +54,7 @@ class TaskModelTest(TestCase):
         """Содержимое поля title преобразуется в slug."""
         task = TaskModelTest.task
         slug = task.slug
-        self.assertEquals(slug, 'zh'*50)
+        self.assertEquals(slug, 'i-am-a-str'*10)
 
     def test_text_slug_max_length_not_exceed(self):
         """
