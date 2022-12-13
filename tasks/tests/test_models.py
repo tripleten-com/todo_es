@@ -1,7 +1,7 @@
-# deals/tests/tests_models.py
+# tasks/tests/tests_models.py
 from django.test import TestCase
 
-from deals.models import Task
+from tasks.models import Task
 
 
 class TaskModelTest(TestCase):

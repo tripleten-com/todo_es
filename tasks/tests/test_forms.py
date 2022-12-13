@@ -1,8 +1,8 @@
 import shutil
 import tempfile
 
-from deals.forms import TaskCreateForm
-from deals.models import Task
+from tasks.forms import TaskCreateForm
+from tasks.models import Task
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, TestCase, override_settings
@@ -65,12 +65,12 @@ class TaskCreateFormTests(TestCase):
             'image': uploaded,
         }
         response = self.guest_client.post(
-            reverse('deals:home'),
+            reverse('tasks:home'),
             data=form_data,
             follow=True
         )
         # Проверяем, сработал ли редирект
-        self.assertRedirects(response, reverse('deals:task_added'))
+        self.assertRedirects(response, reverse('tasks:task_added'))
         # Проверяем, увеличилось ли число постов
         self.assertEqual(Task.objects.count(), tasks_count+1)
         # Проверяем, что создалась запись с нашим слагом
@@ -92,7 +92,7 @@ class TaskCreateFormTests(TestCase):
         }
         # Отправляем POST-запрос
         response = self.guest_client.post(
-            reverse('deals:home'),
+            reverse('tasks:home'),
             data=form_data,
             follow=True
         )

@@ -18,7 +18,7 @@ migrations/
 *.sublime-workspace
 
 static/
-deals/static/
+tasks/static/
 media/
 
 db.sqlite3

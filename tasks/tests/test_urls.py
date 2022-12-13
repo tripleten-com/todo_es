@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 
-from deals.models import Task
+from tasks.models import Task
 
 User = get_user_model()
 
@@ -69,10 +69,10 @@ class TaskURLTests(TestCase):
     def test_urls_uses_correct_template(self):
         """URL-адрес использует соответствующий шаблон."""
         templates_url_names = {
-            'deals/home.html': '/',
-            'deals/added.html': '/added/',
-            'deals/task_list.html': '/task/',
-            'deals/task_detail.html': '/task/test-slug/',
+            'tasks/home.html': '/',
+            'tasks/added.html': '/added/',
+            'tasks/task_list.html': '/task/',
+            'tasks/task_detail.html': '/task/test-slug/',
         }
         for template, url in templates_url_names.items():
             with self.subTest(url=url):

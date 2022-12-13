@@ -4,10 +4,10 @@
     <ul>
       {% for task in object_list %}
         <li>
-          <a href="{% url 'deals:task_detail' task.slug %}">{{ task.title }}</a>
+          <a href="{% url 'tasks:task_detail' task.slug %}">{{ task.title }}</a>
         </li>
       {% endfor %}
     </ul>
-    <a href="{% url 'deals:home' %}">На главную</a>
+    <a href="{% url 'tasks:home' %}">На главную</a>
   </body>
 </html>

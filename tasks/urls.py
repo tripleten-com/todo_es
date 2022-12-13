@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import Home, TaskAddSuccess, TaskDetail, TaskList
 
-app_name = 'deals'
+app_name = 'tasks'
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),
