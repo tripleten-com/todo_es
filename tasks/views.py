@@ -8,14 +8,14 @@ from .models import Task
 
 
 class Home(CreateView):
-    """Форма добавления задания."""
+    """Form for adding a task."""
     template_name = 'tasks/home.html'
     form_class = TaskCreateForm
     success_url = reverse_lazy('tasks:task_added')
 
 
 class TaskList(LoginRequiredMixin, ListView):
-    """Список всех доступных заданий."""
+    """List of all available tasks."""
     login_url = '/admin/login/'
     model = Task
     template_name = 'tasks/task_list.html'
@@ -23,12 +23,12 @@ class TaskList(LoginRequiredMixin, ListView):
 
 
 class TaskDetail(LoginRequiredMixin, DetailView):
-    """Задание подробно."""
+    """Task details."""
     login_url = '/admin/login/'
     model = Task
     template_name = 'tasks/task_detail.html'
 
 
 class TaskAddSuccess(TemplateView):
-    """Задание успешно добавлено."""
+    """The task was successfully added."""
     template_name = 'tasks/added.html'
