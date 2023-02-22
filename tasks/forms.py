@@ -13,7 +13,7 @@ class TaskCreateForm(forms.ModelForm):
         # labels and help_texts are retrieved from the model fields
         fields = '__all__'
 
-    # Валидация поля slug
+    # Validate the slug field
     def clean_slug(self):
         """Processes the cases where slug is not unique."""
         cleaned_data = super().clean()
