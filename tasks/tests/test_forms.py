@@ -22,8 +22,8 @@ class TaskCreateFormTests(TestCase):
         super().setUpClass()
         # Create a database record to validate the existing slug
         Task.objects.create(
-            title='Тестовый заголовок',
-            text='Тестовый текст',
+            title='Test title',
+            text='Test body',
             slug='first'
         )
         # Create a form if you need to validate the attributes
