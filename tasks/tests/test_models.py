@@ -25,10 +25,10 @@ class TaskModelTest(TestCase):
         """verbose_name of the fields matches the expected values."""
         task = TaskModelTest.task
         field_verboses = {
-            'title': 'Заголовок',
-            'text': 'Текст',
-            'slug': 'Адрес для страницы с задачей',
-            'image': 'Картинка',
+            'title': 'Title',
+            'text': 'Text',
+            'slug': 'URL slug for the task page',
+            'image': 'Image',
         }
         for value, expected in field_verboses.items():
             with self.subTest(value=value):
