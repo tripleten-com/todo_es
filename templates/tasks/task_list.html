@@ -1,6 +1,6 @@
 <html>
   <body>
-    <h1>To-do list</h1>
+    <h1>Lista de tareas</h1>
     <ul>
       {% for task in object_list %}
         <li>
@@ -8,6 +8,6 @@
         </li>
       {% endfor %}
     </ul>
-    <a href="{% url 'tasks:home' %}">Main page</a>
+    <a href="{% url 'tasks:home' %}">Página principal</a>
   </body>
 </html>
