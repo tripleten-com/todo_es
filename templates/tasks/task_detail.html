@@ -1,12 +1,12 @@
 <html>
   <body>
-    <h1>Task Details ID: {{ task.id }}</h1>
+    <h1>ID de Detalles de la tarea: {{ task.id }}</h1>
     <ul>
       <li>
-        <a href="{% url 'tasks:home' %}">Main page</a>
+        <a href="{% url 'tasks:home' %}">Página principal</a>
       </li>
       <li>
-        <a href="{% url 'tasks:task_list' %}">To the task list</a>
+        <a href="{% url 'tasks:task_list' %}">Ir a la lista de tareas</a>
       </li>
     </ul>
     <h2>{{ task.title }}</h2>
