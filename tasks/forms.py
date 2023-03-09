@@ -6,22 +6,22 @@ from .models import Task
 
 
 class TaskCreateForm(forms.ModelForm):
-    """Form for creating a task."""
+    """Formulario para crear una tarea."""
     class Meta:
         model = Task
-        # Django magic: '__all__' is used to create a tuple of all model fields;
-        # labels and help_texts are retrieved from the model fields
+        # La magia de Django: '__all__' se utiliza para crear una tupla de todos los campos del modelo;
+        # labels y help_texts se recuperan de los campos del modelo
         fields = '__all__'
 
-    # Validate the slug field
+    # Validar el campo slug
     def clean_slug(self):
-        """Processes the cases where slug is not unique."""
+        """Procesa los casos en los que el slug no es único."""
         cleaned_data = super().clean()
         slug = cleaned_data['slug']
         if not slug:
             title = cleaned_data['title']
             slug = slugify(title)[:100]
         if Task.objects.filter(slug=slug).exists():
-            raise ValidationError(f'Slug "{slug}" already exists, '
-                                  'enter a unique value')
+            raise ValidationError(f'El slug "{slug}" ya existe, '
+                                  'introduce un valor único')
         return slug
