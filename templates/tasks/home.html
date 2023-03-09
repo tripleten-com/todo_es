@@ -1,15 +1,15 @@
 <html>
   <body>
-    <h1>Home page</h1>
+    <h1>Página principal</h1>
     <ul>
       <li>
-        <a href="{% url 'static_pages:about' %}">About the project</a>
+        <a href="{% url 'static_pages:about' %}">Sobre del proyecto</a>
       </li>
       <li>
-        <a href="{% url 'tasks:task_list' %}">To-do list</a>
+        <a href="{% url 'tasks:task_list' %}">Lista de tareas pendientes</a>
       </li>
     </ul>
-    <h2>Add a task</h2>
+    <h2>Añadir tarea</h2>
     <!-- enctype defines the way to encode form data
     when they are sent to the server.
     It is usually not necessary to set the value of the enctype attribute,
@@ -19,7 +19,7 @@
     <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
-    <input type="submit" value="Save">
+    <input type="submit" value="Guarda">
   </form>
   </body>
 </html>
