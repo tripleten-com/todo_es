@@ -7,12 +7,12 @@ class StaticViewsTests(TestCase):
         self.guest_client = Client()
 
     def test_about_page_accessible_by_name(self):
-        """URL generated using the name static_pages:about, available."""
+        """URL generada con el nombre static_pages: about, available."""
         response = self.guest_client.get(reverse('static_pages:about'))
         self.assertEqual(response.status_code, 200)
 
     def test_about_page_uses_correct_template(self):
-        """When sending a staticpages:about
-        the template is applied staticpages/about.html."""
+        """Al enviar un staticpages:about
+        se aplica la plantilla staticpages/about.html."""
         response = self.guest_client.get(reverse('static_pages:about'))
         self.assertTemplateUsed(response, 'static_pages/about.html')
